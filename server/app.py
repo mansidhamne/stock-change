@@ -10,13 +10,14 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, Dataset
 from alpha_vantage.timeseries import TimeSeries
+import os
 
 API_KEY = 'WQ66CQ198JTTGZK0'
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS
 
-uri = "mongodb+srv://mansidhamne22:mansidhamne22@cluster0.baiyc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = os.environ.get('MONGODB_URI')
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
 # Send a ping to confirm a successful connection
