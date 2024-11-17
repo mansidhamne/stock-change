@@ -153,7 +153,7 @@ export default function StockDashboard() {
         <div className="container flex h-16 items-center justify-between px-4">
           <div className="flex items-center space-x-4">
             <Menu className="h-6 w-6" />
-            <h1 className="text-xl font-bold">StockTracker</h1>
+            <h1 className="text-xl font-bold">StockOverflow</h1>
           </div>
           <nav className="flex items-center space-x-4">
             <Link href="/"><Button variant="ghost">Dashboard</Button></Link>
