@@ -16,10 +16,8 @@ API_KEY = 'WQ66CQ198JTTGZK0'
 app = Flask(__name__)
 CORS(app)  # Enable CORS
 
-uri = "mongodb+srv://mansidhamne22:mansidhamne22@cluster0.baiyc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-# Create a new client and connect to the server
+uri = MONGO_DB_URI
 client = MongoClient(uri, server_api=ServerApi('1'))
-# Send a ping to confirm a successful connection
 try:
     client.admin.command('ping')
     print("Pinged your deployment. You successfully connected to MongoDB!")
