@@ -12,7 +12,7 @@ from torch.utils.data import DataLoader, Dataset
 from alpha_vantage.timeseries import TimeSeries
 import os
 
-API_KEY = 'WQ66CQ198JTTGZK0'
+API_KEY = 'DGA5X7I5DPTH4BLK'
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS
