@@ -91,7 +91,7 @@ export default function StockDashboard() {
 
   const fetchPortfolio = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/portfolio')
+      const response = await fetch('https://stock-change.onrender.com/api/portfolio')
       const data = await response.json()
       const normalizedData = data.map(normalizePortfolioEntry);
       setPortfolio(normalizedData);
@@ -109,7 +109,7 @@ export default function StockDashboard() {
 
   const fetchTransactions = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/transactions')
+      const response = await fetch('https://stock-change.onrender.com/api/transactions')
       const data = await response.json()
       setTransactions(data)
       setIsLoading(false)
@@ -127,7 +127,7 @@ export default function StockDashboard() {
     try {
       setIsLoading(true)
       const normalizedData = normalizeTradeData(data);
-      const response = await axios.post(`http://localhost:5000/api/${type}`, normalizedData)
+      const response = await axios.post(`https://stock-change.onrender.com/api/${type}`, normalizedData)
       toast({
         title: 'Success',
         description: response.data.message,

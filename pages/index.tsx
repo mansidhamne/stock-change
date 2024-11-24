@@ -50,7 +50,7 @@ const StockDashboard = () => {
 
   const fetchSymbols = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/symbols')
+      const response = await fetch('https://stock-change.onrender.com/api/symbols')
       const data = await response.json()
       setSymbols(data)
     } catch (error) {
@@ -66,7 +66,7 @@ const StockDashboard = () => {
   const fetchStockData = async () => {
     setLoading(true)
     try {
-      const response = await fetch(`http://localhost:5000/api/stock-data?symbol=${symbol}&startDate=${dateRange.start.toISOString().split('T')[0]}&endDate=${dateRange.end.toISOString().split('T')[0]}`)
+      const response = await fetch(`https://stock-change.onrender.com/api/stock-data?symbol=${symbol}&startDate=${dateRange.start.toISOString().split('T')[0]}&endDate=${dateRange.end.toISOString().split('T')[0]}`)
       const data = await response.json()
       setStockData(data)
     } catch (error) {
@@ -83,7 +83,7 @@ const StockDashboard = () => {
   const fetchStockPrediction = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/stock-prediction?symbol=${symbol}`
+        `https://stock-change.onrender.com/api/stock-prediction?symbol=${symbol}`
       );
       const data = await response.json();
       setNextDayPrediction(data.next_day_prediction);
