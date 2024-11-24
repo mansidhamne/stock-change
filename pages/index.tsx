@@ -224,7 +224,7 @@ const StockDashboard = () => {
                   <LineChart data={stockData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="Date" />
-                    <YAxis domain={[dataMin => (Math.round(dataMin) - 10), dataMax => (Math.round(dataMax) + 10)]}/>
+                    <YAxis domain={[(dataMin: number) => (Math.round(dataMin) - 10), (dataMax: number) => (Math.round(dataMax) + 10)]}/>
                     <Tooltip />
                     <Legend />
                     <Line type="monotone" dataKey="High" stroke="#6d28d9" strokeWidth={2}/>

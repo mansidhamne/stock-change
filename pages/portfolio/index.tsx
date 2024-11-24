@@ -73,7 +73,7 @@ export default function StockDashboard() {
     fetchTransactions()
   }, [])
 
-  const normalizePortfolioEntry = (entry: any): PortfolioEntry => {
+  const normalizePortfolioEntry = (entry: PortfolioEntry): PortfolioEntry => {
     return {
       symbol: entry.symbol,
       totalQuantity: Number(entry.totalQuantity),
@@ -123,7 +123,7 @@ export default function StockDashboard() {
     }
   }
 
-  const handleTrade = async (data: any, type: 'buy' | 'sell') => {
+  const handleTrade = async (data: TradeFormData, type: 'buy' | 'sell') => {
     try {
       setIsLoading(true)
       const normalizedData = normalizeTradeData(data);
