@@ -15,7 +15,7 @@ import os
 API_KEY = 'DGA5X7I5DPTH4BLK'
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": ["https://stock-change-phi.vercel.app"]}})
+CORS(app)  # Enable CORS
 
 uri = os.environ.get('MONGODB_URI')
 # Create a new client and connect to the server
